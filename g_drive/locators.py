@@ -6,5 +6,10 @@ class LoginPageLocators(object):
     """
     USER_NAME_LOCATOR = (By.NAME, 'username')
     PASSWORD_LOCATOR = (By.NAME, "password")
+    SUBMIT_LOCATOR = (By.ID, "btnSubmit_6")
+
+    SESSION_CHECKBOX_LOCATOR = (By.ID,"postfixSID_1")
+    CLOSE_SESSION_LOCATOR = (By.NAME, "btnContinue")
+
 
     CONFIRMATION_LOCATOR = (By.ID, "")
