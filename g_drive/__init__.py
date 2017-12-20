@@ -3,7 +3,9 @@ from selenium import webdriver
 from g_drive.locators import Locators
 
 try:
-    from g_drive.sensitive import USER_NAME, PASSWORD
+    from g_drive.sensitive import Credentials
+    USER_NAME = Credentials.USER_NAME
+    PASSWORD = Credentials.PASSWORD
 except:
     USER_NAME = ''
     PASSWORD = ''
@@ -113,8 +115,12 @@ class Site(object):
             self._find_element(Locators.UPLOAD_SUBMIT_LOCATOR).click()
             self._close_window_when_done()
     
-    def create_folder(folder_name):
-        # TODO: Implement this method.
+    def create_folder(self,folder_name):
+        self._find_element(Locators.CREATE_FOLDER_LOCATOR).click()
+        self._find_element(Locators.FOLDER_NAME_LOCATOR).send_keys(folder_name)
+        self._find_element(Locators.FOLDER_SUBMIT_BUTTON_LOCATOR).click()
+
+        
         pass
 
     def _close_window_when_done(self):
