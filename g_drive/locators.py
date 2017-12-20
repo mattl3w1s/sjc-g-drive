@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-class LoginPageLocators(object):
+class Locators(object):
     """A class for login page locators. All login page locators should be
     added here.
     """
@@ -12,4 +12,16 @@ class LoginPageLocators(object):
     CLOSE_SESSION_LOCATOR = (By.NAME, "btnContinue")
 
 
-    CONFIRMATION_LOCATOR = (By.ID, "")
+    LOGIN_CONFIRMATION_LOCATOR = (By.ID, "")
+
+    UPLOAD_BUTTON_LOCATOR = (By.ID,"input_wfb_4")
+    UPLOAD_SUBMIT_LOCATOR = (By.ID, "btnUpload_7")
+
+    FILE_ID_LOCATORS = [
+        (By.ID,"file1_4"),
+        (By.ID,"file2_2"),
+        (By.ID,"file3_2"),
+        (By.ID,"file4_2"),
+        (By.ID,"file5_2")
+    ]
+
