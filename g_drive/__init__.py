@@ -1,4 +1,4 @@
-import math
+import math, atexit
 from selenium import webdriver
 from g_drive.locators import Locators
 
@@ -7,6 +7,7 @@ try:
 except:
     USER_NAME = ''
     PASSWORD = ''
+
 
 class Site(object):
 
@@ -122,3 +123,6 @@ class Site(object):
 
     def close(self):
         self.driver.close()
+
+    def __exit__(self,exc_type,exc_value,traceback):
+        self.close()
